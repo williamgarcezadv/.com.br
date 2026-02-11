@@ -1,379 +1,283 @@
-<!doctype html>
-<html lang="pt-br">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+/* Escopo: só afeta a página com <body class="corp"> */
+.corp{
+  --bg:#0b1020;
+  --panel:#0f1730;
+  --card:#0f1b38;
+  --text:#eaf0ff;
+  --muted:rgba(234,240,255,.78);
+  --line:rgba(234,240,255,.12);
+  --accent:#6ee7ff;
+  --accent2:#a78bfa;
 
-  <title>William Garcez — Advocacia (Cível, Trabalhista e INSS)</title>
-  <meta name="description" content="Atendimento objetivo em Cível, Trabalhista e Previdenciário (INSS). Clique e fale no WhatsApp com mensagem pronta."/>
-  <meta name="robots" content="index,follow"/>
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:
+    radial-gradient(1100px 600px at 20% 0%, rgba(110,231,255,.12), transparent 55%),
+    radial-gradient(900px 600px at 90% 10%, rgba(167,139,250,.12), transparent 60%),
+    var(--bg);
+  color:var(--text);
+}
 
-  <link rel="canonical" href="https://williamgarcezadv.github.io/"/>
+.corp a{ color:inherit; text-decoration:none; }
+.corp strong{ color:var(--text); }
 
-  <link rel="stylesheet" href="/assets/style.css"/>
+.corp-container{ max-width:1100px; margin:0 auto; padding:0 18px; }
 
-  <!-- Ícones -->
-  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png"/>
+.corp-top{
+  border-bottom:1px solid var(--line);
+  background: rgba(6,10,20,.55);
+  backdrop-filter: blur(10px);
+}
+.corp-top-row{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:10px 0; gap:12px;
+}
+.corp-top-links{ display:flex; gap:14px; font-size:13px; color:var(--muted); }
+.corp-top-links a{ opacity:.9; }
+.corp-top-links a:hover{ opacity:1; }
+.corp-a11y{ display:flex; align-items:center; gap:8px; font-size:13px; color:var(--muted); }
+.corp-a11y-btn{
+  background:transparent; border:1px solid var(--line); color:var(--text);
+  border-radius:10px; padding:6px 10px; cursor:pointer;
+}
+.corp-a11y-btn:hover{ border-color: rgba(234,240,255,.22); }
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website"/>
-  <meta property="og:locale" content="pt_BR"/>
-  <meta property="og:title" content="William Garcez — Advocacia (Cível, Trabalhista e INSS)"/>
-  <meta property="og:description" content="Atendimento objetivo. Clique e fale no WhatsApp com mensagem pronta."/>
-  <meta property="og:url" content="https://williamgarcezadv.github.io/"/>
-  <meta property="og:image" content="https://williamgarcezadv.github.io/assets/og-wvg-1200x630.png"/>
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
+.corp-header{
+  border-bottom:1px solid var(--line);
+  background: rgba(10,14,28,.55);
+  backdrop-filter: blur(10px);
+  position:sticky; top:0; z-index:50;
+}
+.corp-header-row{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 0; gap:12px;
+}
+.corp-brand{ display:flex; align-items:center; gap:12px; }
+.corp-logo{ width:40px; height:40px; object-fit:contain; }
+.corp-logo-fallback{
+  width:42px; height:42px; border-radius:16px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+.corp-brand-name{ font-weight:900; letter-spacing:.2px; }
+.corp-brand-sub{ font-size:12px; color:var(--muted); margin-top:2px; }
 
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:image" content="https://williamgarcezadv.github.io/assets/og-wvg-1200x630.png"/>
+.corp-nav{ display:flex; align-items:center; gap:16px; }
+.corp-nav a{ font-size:14px; color:var(--muted); }
+.corp-nav a:hover{ color:var(--text); }
+.corp-cta{
+  margin-left:8px;
+  padding:10px 14px;
+  border-radius:14px;
+  border:1px solid rgba(110,231,255,.35);
+  background: rgba(110,231,255,.10);
+  color:var(--text);
+  font-weight:800;
+}
+.corp-cta:hover{ background: rgba(110,231,255,.16); }
 
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"LegalService","name":"William Veras Garcez — Advocacia","areaServed":[{"@type":"City","name":"São Luís"}],"address":{"@type":"PostalAddress","streetAddress":"Rua Euclides Farias, s/n, Centro Comercial MAC Center, sala nº 01, São Luís/MA, CEP 65074-080","addressLocality":"São Luís","addressRegion":"MA","addressCountry":"BR"},"telephone":"(98) 98181-1226","email":"william_garcez@hotmail.com","url":"https://williamgarcezadv.github.io/"}
-  </script>
-</head>
+.corp-burger{
+  display:none;
+  background:transparent;
+  border:1px solid var(--line);
+  color:var(--text);
+  border-radius:12px;
+  padding:10px 12px;
+}
+.corp-mobile{
+  display:none;
+  border-top:1px solid var(--line);
+  padding:10px 18px 14px;
+  gap:10px;
+}
+.corp-mobile a{
+  display:block;
+  padding:10px 12px;
+  border-radius:12px;
+  color:var(--muted);
+}
+.corp-mobile a:hover{ background: rgba(234,240,255,.06); color:var(--text); }
 
-<body>
-  <header class="topbar">
-    <div class="container">
-      <div class="nav">
-        <a class="brand" href="/index.html" aria-label="Ir para a página inicial">
-          <div class="logo" aria-hidden="true"></div>
-          <div>
-            <h1>William Veras Garcez</h1>
-            <small>OAB/MA 13.544 • São Luís/MA</small>
-          </div>
-        </a>
+.corp-hero{ padding:42px 0 28px; }
+.corp-hero-grid{
+  display:grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap:18px;
+  align-items:stretch;
+}
+.corp-hero-copy{
+  border:1px solid var(--line);
+  border-radius:22px;
+  background: rgba(15,23,48,.55);
+  padding:22px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+}
+.corp-kicker{ color:rgba(110,231,255,.85); font-weight:800; font-size:12px; letter-spacing:.14em; }
+.corp-h1{ margin:10px 0 8px; font-size:38px; line-height:1.05; }
+.corp-lead{ margin:0; color:var(--muted); font-size:16px; line-height:1.55; }
+.corp-hero-actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
 
-        <nav class="menu" aria-label="Menu principal">
-          <a href="#servicos">Serviços</a>
-          <a href="#como">Como funciona</a>
-          <a href="#faq">Dúvidas</a>
+.corp-hero-box{
+  border:1px solid var(--line);
+  border-radius:22px;
+  background: rgba(15,27,56,.55);
+  padding:18px;
+}
+.corp-box-title{ font-weight:900; font-size:16px; margin-bottom:10px; }
+.corp-label{ display:block; font-size:13px; color:var(--muted); margin-bottom:8px; }
+.corp-input{
+  width:100%;
+  box-sizing:border-box;
+  border-radius:14px;
+  border:1px solid rgba(234,240,255,.16);
+  background: rgba(10,14,28,.55);
+  color:var(--text);
+  padding:12px 12px;
+  outline:none;
+}
+.corp-input:focus{ border-color: rgba(110,231,255,.40); }
+.corp-quick{ display:flex; gap:8px; flex-wrap:wrap; margin:12px 0; }
+.corp-chip{
+  border:1px solid rgba(234,240,255,.14);
+  background: rgba(234,240,255,.06);
+  color:var(--text);
+  border-radius:999px;
+  padding:8px 10px;
+  cursor:pointer;
+  font-size:12px;
+}
+.corp-chip:hover{ border-color: rgba(234,240,255,.22); }
+.corp-mini{ margin-top:10px; font-size:12px; color:var(--muted); }
 
-          <!-- WhatsApp (funciona mesmo sem JS) -->
-          <a class="cta"
-             href="https://wa.me/5598981811226?text=ATENDIMENTO%20%E2%80%94%20Ol%C3%A1%2C%20quero%20orienta%C3%A7%C3%A3o%20inicial.%20%C3%81rea%3A%20(C%C3%ADvel%2FTrabalhista%2FINSS).%20Cidade%3A%20____.%20Resumo%3A%20____."
-             target="_blank" rel="noopener"
-             data-wa="5598981811226"
-             data-wa-tag="ATENDIMENTO"
-             data-wa-message="Olá, quero orientação inicial. Área: (Cível/Trabalhista/INSS). Cidade: ____. Resumo: ____."
-             role="button">
-            WhatsApp
-          </a>
-        </nav>
+.corp-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 14px;
+  border-radius:14px;
+  border:1px solid rgba(234,240,255,.14);
+  background: rgba(234,240,255,.06);
+  color:var(--text);
+  font-weight:800;
+}
+.corp-btn:hover{ background: rgba(234,240,255,.10); }
+.corp-btn-primary{
+  border-color: rgba(110,231,255,.35);
+  background: rgba(110,231,255,.12);
+}
+.corp-btn-primary:hover{ background: rgba(110,231,255,.16); }
+.corp-btn-block{ width:100%; }
 
-        <button id="menuBtn" class="hamburger" aria-label="Abrir menu" aria-expanded="false">Menu</button>
-      </div>
+.corp-note{ margin-top:12px; font-size:12px; color:var(--muted); }
 
-      <div id="mobileMenu" class="mobile-menu" aria-label="Menu mobile">
-        <a href="#servicos">Serviços</a>
-        <a href="#como">Como funciona</a>
-        <a href="#faq">Dúvidas</a>
-        <a href="https://wa.me/5598981811226?text=ATENDIMENTO%20%E2%80%94%20Ol%C3%A1%2C%20quero%20orienta%C3%A7%C3%A3o%20inicial.%20%C3%81rea%3A%20(C%C3%ADvel%2FTrabalhista%2FINSS).%20Cidade%3A%20____.%20Resumo%3A%20____."
-           target="_blank" rel="noopener"
-           data-wa="5598981811226"
-           data-wa-tag="ATENDIMENTO"
-           data-wa-message="Olá, quero orientação inicial. Área: (Cível/Trabalhista/INSS). Cidade: ____. Resumo: ____.">
-          WhatsApp
-        </a>
-      </div>
-    </div>
-  </header>
+.corp-section{ padding:26px 0; }
+.corp-h2{ font-size:22px; margin:0 0 8px; }
+.corp-p{ margin:0 0 14px; color:var(--muted); }
 
-  <main>
-    <section class="hero">
-      <div class="container">
+.corp-grid-3{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:12px;
+}
+.corp-grid-2{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:12px;
+}
 
-        <!-- HERO (captação) -->
-        <div class="hero-grid">
-          <div class="card card-pad">
-            <h2>Atendimento objetivo. Você entende o caminho antes de gastar tempo e dinheiro.</h2>
-            <p>Envie uma mensagem pronta no WhatsApp e eu retorno com <strong>checklist</strong> + <strong>próximo passo</strong> (pedido, recurso, acordo, ação ou defesa).</p>
+.corp-card{
+  border:1px solid var(--line);
+  border-radius:18px;
+  background: rgba(15,27,56,.55);
+  padding:16px;
+}
+.corp-tag{
+  display:inline-flex;
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:900;
+  color:rgba(110,231,255,.95);
+  border:1px solid rgba(110,231,255,.22);
+  background: rgba(110,231,255,.08);
+  margin-bottom:10px;
+}
+.corp-h3{ margin:0 0 8px; font-size:16px; }
+.corp-muted{ margin:0; color:var(--muted); line-height:1.5; }
 
-            <div class="pills">
-              <span class="pill">Cível</span>
-              <span class="pill">Trabalhista</span>
-              <span class="pill">INSS</span>
-              <span class="pill">Mensagem pronta</span>
-              <span class="pill">São Luís/MA</span>
-            </div>
+.corp-actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
+.corp-link{
+  display:inline-flex; align-items:center; gap:6px;
+  color:rgba(234,240,255,.88);
+  font-weight:800;
+  border-bottom:1px solid rgba(234,240,255,.14);
+  padding-bottom:2px;
+}
+.corp-link:hover{ border-bottom-color: rgba(234,240,255,.30); }
+.corp-link-cta{ color:rgba(110,231,255,.95); border-bottom-color: rgba(110,231,255,.30); }
 
-            <div class="actions" style="margin-top:14px">
-              <a class="btn primary"
-                 href="https://wa.me/5598981811226?text=ATENDIMENTO%20%E2%80%94%20Ol%C3%A1%2C%20quero%20orienta%C3%A7%C3%A3o%20inicial.%20%C3%81rea%3A%20(C%C3%ADvel%2FTrabalhista%2FINSS).%20Cidade%3A%20____.%20Resumo%3A%20____."
-                 target="_blank" rel="noopener"
-                 data-wa="5598981811226" data-wa-tag="ATENDIMENTO"
-                 data-wa-message="Olá, quero orientação inicial. Área: (Cível/Trabalhista/INSS). Cidade: ____. Resumo: ____.">
-                Falar no WhatsApp (mensagem pronta)
-              </a>
-            </div>
+.corp-unit{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
 
-            <div class="actions" style="margin-top:10px">
-              <a class="btn"
-                 href="https://wa.me/5598981811226?text=INSS%20%E2%80%94%20Quero%20orienta%C3%A7%C3%A3o%20inicial.%20Benef%C3%ADcio%3A%20(BPC%2FAux%C3%ADlio%2FSal%C3%A1rio-maternidade%2FOutro).%20Cidade%3A%20____.%20Foi%20negado%3F%20(sim%2Fn%C3%A3o)."
-                 target="_blank" rel="noopener"
-                 data-wa="5598981811226" data-wa-tag="INSS"
-                 data-wa-message="Quero orientação inicial. Benefício: (BPC/Auxílio/Salário-maternidade/Outro). Cidade: ____. Foi negado? (sim/não).">
-                INSS
-              </a>
+.corp-post{
+  border:1px solid var(--line);
+  border-radius:18px;
+  background: rgba(15,27,56,.55);
+  padding:16px;
+  display:block;
+}
+.corp-post:hover{ border-color: rgba(234,240,255,.20); }
+.corp-post-title{ font-weight:900; margin-bottom:6px; }
 
-              <a class="btn"
-                 href="https://wa.me/5598981811226?text=TRABALHISTA%20%E2%80%94%20Quero%20orienta%C3%A7%C3%A3o%20inicial.%20Data%20da%20demiss%C3%A3o%3A%20__%2F__%2F____.%20Empresa%3A%20____.%20Resumo%3A%20____."
-                 target="_blank" rel="noopener"
-                 data-wa="5598981811226" data-wa-tag="TRABALHISTA"
-                 data-wa-message="Quero orientação inicial. Data da demissão: __/__/____. Empresa: ____. Resumo: ____.">
-                Trabalhista
-              </a>
+.corp-newsletter{
+  margin-top:14px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background: rgba(15,23,48,.55);
+  padding:16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.corp-newsletter-form{ display:flex; gap:10px; align-items:center; width: 420px; max-width: 100%; }
 
-              <a class="btn"
-                 href="https://wa.me/5598981811226?text=C%C3%8DVEL%20%E2%80%94%20Quero%20orienta%C3%A7%C3%A3o%20inicial.%20Tema%3A%20(invent%C3%A1rio%2Fcontrato%2Fcondom%C3%ADnio%2Foutro).%20Cidade%3A%20____.%20Resumo%3A%20____."
-                 target="_blank" rel="noopener"
-                 data-wa="5598981811226" data-wa-tag="CÍVEL"
-                 data-wa-message="Quero orientação inicial. Tema: (inventário/contrato/condomínio/outro). Cidade: ____. Resumo: ____.">
-                Cível
-              </a>
-            </div>
+.corp-contact{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:12px;
+}
 
-            <p class="note" style="margin-top:12px">
-              Ao abrir o WhatsApp, <strong>toque em Enviar</strong>.
-              <br/>Conteúdo informativo. Atendimento mediante análise do caso concreto e documentos.
-            </p>
-          </div>
+.corp-footer{
+  border-top:1px solid var(--line);
+  padding:18px 0;
+  background: rgba(6,10,20,.55);
+}
+.corp-footer-row{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+}
+.corp-footer-title{ font-weight:900; }
+.corp-footer-muted{ color:var(--muted); margin-top:6px; font-size:12px; }
+.corp-footer-links{ display:flex; gap:14px; color:var(--muted); font-size:13px; }
+.corp-footer-links a:hover{ color:var(--text); }
 
-          <!-- Cartão lateral (só contato) -->
-          <div class="card card-pad">
-            <div class="badge">
-              <div>
-                <div style="font-weight:900;color:var(--text)">Contato</div>
-                <div>(98) 98181-1226 • william_garcez@hotmail.com</div>
-                <div style="margin-top:6px">Rua Euclides Farias, s/n, Centro Comercial MAC Center, sala nº 01, São Luís/MA, CEP 65074-080</div>
-              </div>
-            </div>
+/* Responsivo */
+@media (max-width: 980px){
+  .corp-hero-grid{ grid-template-columns: 1fr; }
+  .corp-grid-3{ grid-template-columns: 1fr; }
+  .corp-grid-2{ grid-template-columns: 1fr; }
+  .corp-contact{ grid-template-columns: 1fr; }
+  .corp-unit{ flex-direction:column; align-items:stretch; }
+  .corp-nav{ display:none; }
+  .corp-burger{ display:inline-flex; }
+  .corp-mobile{ display:none; }
+}
 
-            <div style="height:14px"></div>
-
-            <div class="grid">
-              <div class="card card-pad span-12">
-                <h4 style="margin:0 0 6px">O que você recebe</h4>
-                <ul style="margin:0;color:var(--muted)">
-                  <li>Checklist do seu caso</li>
-                  <li>Próximo passo (pedido/recurso/ação/defesa/acordo)</li>
-                  <li>Orientação objetiva por documentos</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- SERVIÇOS (captação por página) -->
-        <div class="section" id="servicos" style="padding-top: 18px">
-          <h3>Serviços (páginas prontas para anúncios)</h3>
-          <p class="lead">Clique para abrir a página do serviço (cada uma já tem WhatsApp com mensagem específica).</p>
-
-          <div class="grid">
-            <div class="card card-pad span-6">
-              <div class="service">
-                <span class="tag">INSS</span>
-                <h4>Salário-maternidade (urbano + rural + MEI + facultativa)</h4>
-                <p style="color:var(--muted);margin:0">Checklist rápido e prova certa para o seu caso.</p>
-                <div class="actions" style="margin-top:12px">
-                  <a class="btn primary" href="/salario-maternidade.html">Abrir página</a>
-                  <a class="btn"
-                     href="https://wa.me/5598981811226?text=M%C3%83E%20INSS%20%E2%80%94%20Quero%20saber%20se%20tenho%20direito%20ao%20sal%C3%A1rio-maternidade.%20Tive%20beb%C3%AA%20em%20__%2F__%2F____.%20Situa%C3%A7%C3%A3o%3A%20(rural%2FMEI%2Ffacultativa%2Finformal)."
-                     target="_blank" rel="noopener">
-                    WhatsApp
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="card card-pad span-6">
-              <div class="service">
-                <span class="tag">INSS</span>
-                <h4>BPC/LOAS (Idoso 65+ e PCD)</h4>
-                <p style="color:var(--muted);margin:0">CadÚnico, renda e documentos sociais/médicos.</p>
-                <div class="actions" style="margin-top:12px">
-                  <a class="btn primary" href="/bpc-loas.html">Abrir página</a>
-                  <a class="btn"
-                     href="https://wa.me/5598981811226?text=BPC%20%E2%80%94%20Quero%20analisar%20meu%20caso%20de%20BPC%2FLOAS.%20%C3%89%20para%3A%20(idoso%2065%2B%20ou%20PCD).%20Cidade%3A%20____.%20Pedido%20j%C3%A1%20foi%20negado%3F%20(sim%2Fn%C3%A3o)."
-                     target="_blank" rel="noopener">
-                    WhatsApp
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="card card-pad span-6">
-              <div class="service">
-                <span class="tag">INSS</span>
-                <h4>Auxílio-doença / incapacidade</h4>
-                <p style="color:var(--muted);margin:0">Perícia, laudos, negativa e estratégia de recurso.</p>
-                <div class="actions" style="margin-top:12px">
-                  <a class="btn primary" href="/auxilio-doenca.html">Abrir página</a>
-                  <a class="btn"
-                     href="https://wa.me/5598981811226?text=AUX%C3%8DLIO%20%E2%80%94%20Quero%20analisar%20benef%C3%ADcio%20por%20incapacidade.%20Doen%C3%A7a%2FCID%3A%20____.%20Teve%20per%C3%ADcia%3F%20(sim%2Fn%C3%A3o).%20Foi%20negado%3F%20(sim%2Fn%C3%A3o)."
-                     target="_blank" rel="noopener">
-                    WhatsApp
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="card card-pad span-6">
-              <div class="service">
-                <span class="tag">Trabalhista</span>
-                <h4>Rescisão, FGTS e verbas trabalhistas</h4>
-                <p style="color:var(--muted);margin:0">Triagem por documentos + cálculo inicial.</p>
-                <div class="actions" style="margin-top:12px">
-                  <a class="btn primary" href="/trabalhista-rescisao-fgts.html">Abrir página</a>
-                  <a class="btn"
-                     href="https://wa.me/5598981811226?text=TRABALHISTA%20%E2%80%94%20Quero%20analisar%20minha%20rescis%C3%A3o%2FFGTS.%20Data%3A%20__%2F__%2F____.%20Empresa%3A%20____.%20Resumo%3A%20____."
-                     target="_blank" rel="noopener">
-                    WhatsApp
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="card card-pad span-6">
-              <div class="service">
-                <span class="tag">Cível</span>
-                <h4>Inventário e partilha</h4>
-                <p style="color:var(--muted);margin:0">Consensual ou litigioso. Checklist simples.</p>
-                <div class="actions" style="margin-top:12px">
-                  <a class="btn primary" href="/inventario-partilha.html">Abrir página</a>
-                  <a class="btn"
-                     href="https://wa.me/5598981811226?text=INVENT%C3%81RIO%20%E2%80%94%20Quero%20orienta%C3%A7%C3%A3o%20inicial.%20Falecimento%20em%20__%2F__%2F____.%20Existe%20im%C3%B3vel%3F%20(sim%2Fn%C3%A3o).%20Herdeiros%20est%C3%A3o%20de%20acordo%3F%20(sim%2Fn%C3%A3o)."
-                     target="_blank" rel="noopener">
-                    WhatsApp
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="card card-pad span-6">
-              <div class="service">
-                <span class="tag">Cível</span>
-                <h4>Condomínio (cobrança, execução, defesa)</h4>
-                <p style="color:var(--muted);margin:0">Revisão de encargos, multas e documentos.</p>
-                <div class="actions" style="margin-top:12px">
-                  <a class="btn primary" href="/condominio.html">Abrir página</a>
-                  <a class="btn"
-                     href="https://wa.me/5598981811226?text=CONDOM%C3%8DNIO%20%E2%80%94%20Preciso%20analisar%20cobran%C3%A7a%2Fexecu%C3%A7%C3%A3o%20condominial.%20Valor%20aprox.%3A%20R%24____.%20J%C3%A1%20tem%20processo%3F%20(sim%2Fn%C3%A3o)."
-                     target="_blank" rel="noopener">
-                    WhatsApp
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- COMO FUNCIONA -->
-        <div class="section" id="como">
-          <h3>Como funciona</h3>
-          <div class="grid">
-            <div class="card card-pad span-4">
-              <h4 style="margin:0 0 6px">1) Você chama no WhatsApp</h4>
-              <p style="color:var(--muted);margin:0">Com mensagem pronta + dados mínimos do caso.</p>
-            </div>
-            <div class="card card-pad span-4">
-              <h4 style="margin:0 0 6px">2) Checklist do seu caso</h4>
-              <p style="color:var(--muted);margin:0">Eu digo exatamente quais documentos servem.</p>
-            </div>
-            <div class="card card-pad span-4">
-              <h4 style="margin:0 0 6px">3) Próximo passo seguro</h4>
-              <p style="color:var(--muted);margin:0">Pedido/recurso/acordo/ação/defesa (conforme viabilidade).</p>
-            </div>
-          </div>
-
-          <div class="actions" style="margin-top:14px">
-            <a class="btn primary"
-               href="https://wa.me/5598981811226?text=ATENDIMENTO%20%E2%80%94%20Ol%C3%A1%2C%20quero%20orienta%C3%A7%C3%A3o%20inicial.%20%C3%81rea%3A%20(C%C3%ADvel%2FTrabalhista%2FINSS).%20Cidade%3A%20____.%20Resumo%3A%20____."
-               target="_blank" rel="noopener">
-              Falar no WhatsApp
-            </a>
-          </div>
-
-          <p class="note" style="margin-top:10px">Conteúdo informativo. Atendimento mediante análise do caso concreto e documentos.</p>
-        </div>
-
-        <!-- PROVA SOCIAL (genérica e segura) -->
-        <div class="section">
-          <h3>O que os clientes costumam dizer</h3>
-          <div class="grid">
-            <div class="card card-pad span-4">
-              <p style="margin:0"><strong>“Objetivo e rápido.”</strong></p>
-              <p style="color:var(--muted);margin:8px 0 0">Entendi o que precisava e quais documentos enviar.</p>
-            </div>
-            <div class="card card-pad span-4">
-              <p style="margin:0"><strong>“Me deu um caminho claro.”</strong></p>
-              <p style="color:var(--muted);margin:8px 0 0">Sem enrolação, orientou o próximo passo.</p>
-            </div>
-            <div class="card card-pad span-4">
-              <p style="margin:0"><strong>“Ajudou a organizar tudo.”</strong></p>
-              <p style="color:var(--muted);margin:8px 0 0">Checklist simples e direto.</p>
-            </div>
-          </div>
-          <p class="note" style="margin-top:10px">Depoimentos ilustrativos. Resultados variam conforme o caso.</p>
-        </div>
-
-        <!-- FAQ -->
-        <div class="section" id="faq">
-          <h3>Dúvidas rápidas</h3>
-          <div class="grid">
-            <div class="card card-pad span-12">
-              <details>
-                <summary><strong>Preciso pagar para “só tirar uma dúvida”?</strong></summary>
-                <p style="color:var(--muted);margin-top:10px">
-                  Você pode mandar a mensagem inicial. Eu retorno com o checklist e orientação do próximo passo conforme o caso e os documentos.
-                </p>
-              </details>
-              <div style="height:10px"></div>
-              <details>
-                <summary><strong>Funciona para outras cidades?</strong></summary>
-                <p style="color:var(--muted);margin-top:10px">
-                  Sim. Informe sua Cidade/UF na mensagem. A análise depende do caso e da documentação disponível.
-                </p>
-              </details>
-              <div style="height:10px"></div>
-              <details>
-                <summary><strong>Já foi negado no INSS. Ainda dá?</strong></summary>
-                <p style="color:var(--muted);margin-top:10px">
-                  Muitas vezes sim. Envie a data e o motivo do indeferimento (print/foto). Dá para ajustar prova, recorrer e/ou judicializar quando cabível.
-                </p>
-              </details>
-              <div style="height:10px"></div>
-              <details>
-                <summary><strong>O WhatsApp abre mas não envia sozinho?</strong></summary>
-                <p style="color:var(--muted);margin-top:10px">
-                  O WhatsApp exige que você toque em <strong>Enviar</strong>. A mensagem já vai preenchida automaticamente.
-                </p>
-              </details>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div>
-          <div style="font-weight:900;color:var(--text)">William Veras Garcez — OAB/MA 13.544</div>
-          <div>Rua Euclides Farias, s/n, Centro Comercial MAC Center, sala nº 01, São Luís/MA, CEP 65074-080</div>
-          <div>william_garcez@hotmail.com • (98) 98181-1226</div>
-          <div style="margin-top:8px">© 2026. Conteúdo informativo. Atendimento mediante análise do caso concreto e documentos.</div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Mantém seu JS (menu). Os botões do WhatsApp funcionam mesmo sem ele -->
-  <script src="/assets/script.js"></script>
-</body>
-</html>
 
