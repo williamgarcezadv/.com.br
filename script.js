@@ -58,7 +58,8 @@
       ].join("");
       const wa = form.getAttribute("data-wa-form");
       const url = `https://wa.me/${wa}?text=${encodeMsg(msg)}`;
-      window.open(url, "_blank", "noopener,noreferrer");
+      window.location.href = url;
+;
     });
   }
 })();
