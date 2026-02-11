@@ -3,19 +3,38 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
   <title>William Garcez — Advocacia (Cível, Trabalhista e Previdenciário)</title>
   <meta name="description" content="Site do escritório: páginas de serviço para anúncios e atendimento via WhatsApp. Cível, Trabalhista e Previdenciário."/>
   <meta name="robots" content="index,follow"/>
+
+  <!-- Canonical / URL correta -->
+  <link rel="canonical" href="https://williamgarcezadv.github.io/"/>
+
   <link rel="stylesheet" href="/assets/style.css"/>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%236ee7ff'/%3E%3Cstop offset='1' stop-color='%23a78bfa'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='4' y='4' width='56' height='56' rx='16' fill='url(%23g)'/%3E%3Cpath d='M22 38h20M26 28h12' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E"/>
+
+  <!-- Ícones -->
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png"/>
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website"/>
   <meta property="og:locale" content="pt_BR"/>
   <meta property="og:title" content="William Garcez — Advocacia (Cível, Trabalhista e Previdenciário)"/>
   <meta property="og:description" content="Site do escritório: páginas de serviço para anúncios e atendimento via WhatsApp. Cível, Trabalhista e Previdenciário."/>
-  <meta property="og:url" content="/index.html"/>
+  <meta property="og:url" content="https://williamgarcezadv.github.io/"/>
+  <meta property="og:image" content="https://williamgarcezadv.github.io/assets/og-wvg-1200x630.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
   <meta name="twitter:card" content="summary_large_image"/>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LegalService", "name": "William Veras Garcez — Advocacia", "areaServed": [{"@type": "City", "name": "São Luís"}], "address": {"@type": "PostalAddress", "streetAddress": "Rua Euclides Farias, s/n, Centro Comercial MAC Center, sala nº 01, São Luís/MA, CEP 65074-080", "addressLocality": "São Luís", "addressRegion": "MA", "addressCountry": "BR"}, "telephone": "(98) 98181-1226", "email": "william_garcez@hotmail.com", "url": "/index.html"}</script>
+  <meta name="twitter:image" content="https://williamgarcezadv.github.io/assets/og-wvg-1200x630.png"/>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"LegalService","name":"William Veras Garcez — Advocacia","areaServed":[{"@type":"City","name":"São Luís"}],"address":{"@type":"PostalAddress","streetAddress":"Rua Euclides Farias, s/n, Centro Comercial MAC Center, sala nº 01, São Luís/MA, CEP 65074-080","addressLocality":"São Luís","addressRegion":"MA","addressCountry":"BR"},"telephone":"(98) 98181-1226","email":"william_garcez@hotmail.com","url":"https://williamgarcezadv.github.io/"}
+  </script>
 </head>
+
 <body>
   <header class="topbar">
     <div class="container">
@@ -27,19 +46,39 @@
             <small>OAB/MA 13.544 • São Luís/MA</small>
           </div>
         </a>
+
         <nav class="menu" aria-label="Menu principal">
           <a href="/index.html#areas">Áreas</a>
           <a href="/index.html#servicos">Serviços</a>
           <a href="/index.html#contato">Contato</a>
-          <a class="cta" href="#" data-wa="5598981811226" data-wa-tag="ATENDIMENTO" data-wa-message="Olá, quero orientação inicial." role="button">WhatsApp</a>
+
+          <!-- WhatsApp com fallback (funciona mesmo sem JS) -->
+          <a class="cta"
+             href="https://wa.me/5598981811226?text=Ol%C3%A1%2C%20quero%20orienta%C3%A7%C3%A3o%20inicial."
+             target="_blank" rel="noopener"
+             data-wa="5598981811226"
+             data-wa-tag="ATENDIMENTO"
+             data-wa-message="Olá, quero orientação inicial."
+             role="button">
+            WhatsApp
+          </a>
         </nav>
+
         <button id="menuBtn" class="hamburger" aria-label="Abrir menu" aria-expanded="false">Menu</button>
       </div>
+
       <div id="mobileMenu" class="mobile-menu" aria-label="Menu mobile">
         <a href="/index.html#areas">Áreas</a>
         <a href="/index.html#servicos">Serviços</a>
         <a href="/index.html#contato">Contato</a>
-        <a href="#" data-wa="5598981811226" data-wa-tag="ATENDIMENTO" data-wa-message="Olá, quero orientação inicial.">WhatsApp</a>
+
+        <a href="https://wa.me/5598981811226?text=Ol%C3%A1%2C%20quero%20orienta%C3%A7%C3%A3o%20inicial."
+           target="_blank" rel="noopener"
+           data-wa="5598981811226"
+           data-wa-tag="ATENDIMENTO"
+           data-wa-message="Olá, quero orientação inicial.">
+          WhatsApp
+        </a>
       </div>
     </div>
   </header>
@@ -51,13 +90,31 @@
           <div class="card card-pad">
             <h2>Advocacia com orientação clara e objetiva</h2>
             <p>Cível, Trabalhista e Previdenciário. Páginas de serviço prontas para impulsionar vídeos e direcionar o cliente ao WhatsApp com mensagem pré-preenchida.</p>
-            <div class="pills"><span class="pill">Cível</span><span class="pill">Trabalhista</span><span class="pill">Previdenciário</span><span class="pill">Atendimento por WhatsApp</span><span class="pill">São Luís/MA</span></div>
+
+            <div class="pills">
+              <span class="pill">Cível</span><span class="pill">Trabalhista</span><span class="pill">Previdenciário</span>
+              <span class="pill">Atendimento por WhatsApp</span><span class="pill">São Luís/MA</span>
+            </div>
+
             <div class="actions">
-              <a class="btn primary" href="#" data-wa="5598981811226" data-wa-tag="ATENDIMENTO" data-wa-message="Quero orientação inicial sobre: Advocacia com orientação clara e objetiva">Falar no WhatsApp</a>
+              <a class="btn primary"
+                 href="https://wa.me/5598981811226?text=ATENDIMENTO%20%E2%80%94%20Quero%20orienta%C3%A7%C3%A3o%20inicial%20sobre%20meu%20caso."
+                 target="_blank" rel="noopener"
+                 data-wa="5598981811226"
+                 data-wa-tag="ATENDIMENTO"
+                 data-wa-message="Quero orientação inicial sobre: Advocacia com orientação clara e objetiva">
+                Falar no WhatsApp
+              </a>
+
               <a class="btn" href="/index.html#contato">Enviar resumo</a>
             </div>
-            <p class="note" style="margin-top:12px">Conteúdo informativo. Atendimento mediante análise do caso concreto e documentos.</p>
+
+            <p class="note" style="margin-top:12px">
+              Ao abrir o WhatsApp, <strong>toque em Enviar</strong> para concluir.
+              <br/>Conteúdo informativo. Atendimento mediante análise do caso concreto e documentos.
+            </p>
           </div>
+
           <div class="card card-pad">
             <div class="kpi">
               <div class="logo" style="width:42px;height:42px;border-radius:16px" aria-hidden="true"></div>
@@ -78,7 +135,7 @@
         </div>
 
         <div class="section" style="padding-top: 14px">
-          
+
 <div class="section" id="areas">
   <h3>Áreas de atuação</h3>
   <p class="lead">Cível, Trabalhista e Previdenciário — com foco em orientação clara, estratégia e documentação.</p>
@@ -119,7 +176,14 @@
         <p style="color:var(--muted);margin:0">Teve bebê e ficou sem renda? Veja o que costuma servir de prova no seu caso.</p>
         <div class="actions">
           <a class="btn primary" href="/salario-maternidade.html">Abrir página</a>
-          <a class="btn" href="#" data-wa="5598981811226" data-wa-tag="MÃE INSS" data-wa-message="Quero saber se tenho direito ao salário-maternidade. Tive bebê em __/__/____.">WhatsApp</a>
+          <a class="btn"
+             href="https://wa.me/5598981811226?text=M%C3%83E%20INSS%20%E2%80%94%20Quero%20saber%20se%20tenho%20direito%20ao%20sal%C3%A1rio-maternidade.%20Tive%20beb%C3%AA%20em%20__%2F__%2F____."
+             target="_blank" rel="noopener"
+             data-wa="5598981811226"
+             data-wa-tag="MÃE INSS"
+             data-wa-message="Quero saber se tenho direito ao salário-maternidade. Tive bebê em __/__/____.">
+            WhatsApp
+          </a>
         </div>
       </div>
     </div>
@@ -131,7 +195,14 @@
         <p style="color:var(--muted);margin:0">Checklist de documentos e triagem rápida para orientar o pedido ou recurso.</p>
         <div class="actions">
           <a class="btn primary" href="/bpc-loas.html">Abrir página</a>
-          <a class="btn" href="#" data-wa="5598981811226" data-wa-tag="BPC" data-wa-message="Quero analisar meu caso de BPC/LOAS. É para (idoso 65+ ou PCD). Cidade: ____.">WhatsApp</a>
+          <a class="btn"
+             href="https://wa.me/5598981811226?text=BPC%20%E2%80%94%20Quero%20analisar%20meu%20caso%20de%20BPC%2FLOAS.%20%C3%89%20para%20(idoso%2065%2B%20ou%20PCD).%20Cidade%3A%20____."
+             target="_blank" rel="noopener"
+             data-wa="5598981811226"
+             data-wa-tag="BPC"
+             data-wa-message="Quero analisar meu caso de BPC/LOAS. É para (idoso 65+ ou PCD). Cidade: ____.">
+            WhatsApp
+          </a>
         </div>
       </div>
     </div>
@@ -143,7 +214,14 @@
         <p style="color:var(--muted);margin:0">Organização de prova médica e orientação do próximo passo.</p>
         <div class="actions">
           <a class="btn primary" href="/auxilio-doenca.html">Abrir página</a>
-          <a class="btn" href="#" data-wa="5598981811226" data-wa-tag="AUXÍLIO" data-wa-message="Quero analisar benefício por incapacidade. Doença/CID: ____. Teve perícia? (sim/não).">WhatsApp</a>
+          <a class="btn"
+             href="https://wa.me/5598981811226?text=AUX%C3%8DLIO%20%E2%80%94%20Quero%20analisar%20benef%C3%ADcio%20por%20incapacidade.%20Doen%C3%A7a%2FCID%3A%20____.%20Teve%20per%C3%ADcia%3F%20(sim%2Fn%C3%A3o)."
+             target="_blank" rel="noopener"
+             data-wa="5598981811226"
+             data-wa-tag="AUXÍLIO"
+             data-wa-message="Quero analisar benefício por incapacidade. Doença/CID: ____. Teve perícia? (sim/não).">
+            WhatsApp
+          </a>
         </div>
       </div>
     </div>
@@ -155,7 +233,14 @@
         <p style="color:var(--muted);margin:0">Demitiram e não pagaram? Dúvida sobre cálculos? Faça a triagem.</p>
         <div class="actions">
           <a class="btn primary" href="/trabalhista-rescisao-fgts.html">Abrir página</a>
-          <a class="btn" href="#" data-wa="5598981811226" data-wa-tag="TRABALHISTA" data-wa-message="Quero analisar minha rescisão/FGTS. Data: __/__/____. Empresa: ____.">WhatsApp</a>
+          <a class="btn"
+             href="https://wa.me/5598981811226?text=TRABALHISTA%20%E2%80%94%20Quero%20analisar%20minha%20rescis%C3%A3o%2FFGTS.%20Data%3A%20__%2F__%2F____.%20Empresa%3A%20____."
+             target="_blank" rel="noopener"
+             data-wa="5598981811226"
+             data-wa-tag="TRABALHISTA"
+             data-wa-message="Quero analisar minha rescisão/FGTS. Data: __/__/____. Empresa: ____.">
+            WhatsApp
+          </a>
         </div>
       </div>
     </div>
@@ -167,7 +252,14 @@
         <p style="color:var(--muted);margin:0">Regularize bens e herança com orientação segura (consensual ou litigioso).</p>
         <div class="actions">
           <a class="btn primary" href="/inventario-partilha.html">Abrir página</a>
-          <a class="btn" href="#" data-wa="5598981811226" data-wa-tag="INVENTÁRIO" data-wa-message="Quero orientação inicial sobre inventário. Falecimento em __/__/____. Existe imóvel? (sim/não).">WhatsApp</a>
+          <a class="btn"
+             href="https://wa.me/5598981811226?text=INVENT%C3%81RIO%20%E2%80%94%20Quero%20orienta%C3%A7%C3%A3o%20inicial%20sobre%20invent%C3%A1rio.%20Falecimento%20em%20__%2F__%2F____.%20Existe%20im%C3%B3vel%3F%20(sim%2Fn%C3%A3o)."
+             target="_blank" rel="noopener"
+             data-wa="5598981811226"
+             data-wa-tag="INVENTÁRIO"
+             data-wa-message="Quero orientação inicial sobre inventário. Falecimento em __/__/____. Existe imóvel? (sim/não).">
+            WhatsApp
+          </a>
         </div>
       </div>
     </div>
@@ -179,7 +271,14 @@
         <p style="color:var(--muted);margin:0">Antes de piorar, revise cálculo, encargos e documentos.</p>
         <div class="actions">
           <a class="btn primary" href="/condominio.html">Abrir página</a>
-          <a class="btn" href="#" data-wa="5598981811226" data-wa-tag="CONDOMÍNIO" data-wa-message="Preciso analisar cobrança/execução condominial. Valor aprox.: R$____. Já tem processo? (sim/não).">WhatsApp</a>
+          <a class="btn"
+             href="https://wa.me/5598981811226?text=CONDOM%C3%8DNIO%20%E2%80%94%20Preciso%20analisar%20cobran%C3%A7a%2Fexecu%C3%A7%C3%A3o%20condominial.%20Valor%20aprox.%3A%20R%24____.%20J%C3%A1%20tem%20processo%3F%20(sim%2Fn%C3%A3o)."
+             target="_blank" rel="noopener"
+             data-wa="5598981811226"
+             data-wa-tag="CONDOMÍNIO"
+             data-wa-message="Preciso analisar cobrança/execução condominial. Valor aprox.: R$____. Já tem processo? (sim/não).">
+            WhatsApp
+          </a>
         </div>
       </div>
     </div>
@@ -209,7 +308,10 @@
           <textarea id="details" name="details" placeholder="Explique em poucas linhas o que aconteceu."></textarea>
         </div>
         <button class="btn primary" type="submit">Enviar no WhatsApp</button>
-        <div class="note">Ao enviar, você concorda em compartilhar as informações apenas para análise inicial. Conteúdo informativo.</div>
+        <div class="note">
+          Ao abrir o WhatsApp, <strong>toque em Enviar</strong> para concluir.
+          <br/>Conteúdo informativo. Atendimento mediante análise do caso concreto e documentos.
+        </div>
       </form>
     </div>
     <div class="card card-pad span-6">
@@ -217,7 +319,16 @@
       <p style="margin:0;color:var(--muted)"><strong style="color:var(--text)">Rua Euclides Farias, s/n, Centro Comercial MAC Center, sala nº 01, São Luís/MA, CEP 65074-080</strong></p>
       <p style="margin:10px 0 0;color:var(--muted)">william_garcez@hotmail.com • (98) 98181-1226</p>
       <div style="height:14px"></div>
-      <a class="btn primary" href="#" data-wa="5598981811226" data-wa-tag="ATENDIMENTO" data-wa-message="Olá, quero orientação inicial.">Abrir WhatsApp</a>
+
+      <a class="btn primary"
+         href="https://wa.me/5598981811226?text=Ol%C3%A1%2C%20quero%20orienta%C3%A7%C3%A3o%20inicial."
+         target="_blank" rel="noopener"
+         data-wa="5598981811226"
+         data-wa-tag="ATENDIMENTO"
+         data-wa-message="Olá, quero orientação inicial.">
+        Abrir WhatsApp
+      </a>
+
       <div style="height:18px"></div>
       <h4 style="margin:0 0 10px">Observação</h4>
       <p style="margin:0;color:var(--muted)">Atendimento mediante análise do caso concreto e documentos. Nenhuma informação aqui substitui consulta jurídica individual.</p>
